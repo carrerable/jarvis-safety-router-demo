@@ -102,3 +102,13 @@ pre { background: var(--chip-bg); padding: var(--s-3); border-radius: var(--r-s)
 .actions li { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; }
 @media (max-width: 40rem) { .orb-hero { height: 35vh; min-height: 15rem; } }
 @media (prefers-reduced-motion: reduce) { .orb-fallback { animation: none; } }
+
+/* Volver al portafolio */
+.head .topbar { display: flex; align-items: center; justify-content: space-between; gap: var(--s-2) var(--s-4); flex-wrap: wrap; }
+.backnav { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0 var(--s-4); }
+.backnav a { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--fg); text-decoration: none; padding: 0 0.1rem; transition: color var(--dur-fast) var(--ease); }
+.backnav .back-main { font-weight: 600; }
+.backnav .back-all { color: var(--mut); text-decoration: underline; text-underline-offset: 0.25em; }
+.backnav a:hover { color: var(--acc); }
+.banner .banner-back { text-underline-offset: 0.18em; }
+.banner a:hover { text-decoration-thickness: 2px; }
