@@ -1,5 +1,9 @@
 # JARVIS — code-enforced safety router
 
+## Screenshots
+
+![The demo running in the browser (desktop, fictional data).](docs/screenshots/demo-1440.webp)
+
 > Public mini-demo with fictional data. The full product is private; access on request: carrerabernal@gmail.com
 
 ## Live demo
