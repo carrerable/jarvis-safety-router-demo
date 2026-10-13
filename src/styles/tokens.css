@@ -1,0 +1,68 @@
+/* Design system del portafolio (copia reducida de site/src/styles/tokens.css).
+   Paleta carbon / crema / coral; Archivo pesada + Instrument Serif cursiva + IBM Plex Mono. */
+:root {
+  --c-ink: #0e0e10;
+  --c-ink-2: #17171a;
+  --c-cream: #f4efe6;
+  --c-cream-2: #fbf8f2;
+  --c-coral: #e8572a;
+  --c-coral-lit: #f06e43;
+  --c-coral-deep: #b53d18;
+  --c-violet: #8b6cf0;
+  --c-lime: #c6f432;
+
+  --f-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --f-serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --f-body: 'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  --t-xs: 0.75rem;
+  --t-sm: 0.875rem;
+  --t-md: 1rem;
+  --t-lg: 1.25rem;
+  --t-xl: clamp(1.3rem, 1.1rem + 1vw, 1.8rem);
+  --t-2xl: clamp(1.9rem, 1.2rem + 3.2vw, 3.6rem);
+
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem; --s-5: 1.5rem; --s-6: 2rem; --s-7: 3rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --wrap: 72rem;
+  --r-s: 4px; --r-m: 10px; --r-l: 18px; --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.18), 0 8px 24px rgba(0, 0, 0, 0.14);
+  --dur-fast: 150ms; --dur: 250ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Tono claro (por defecto) */
+  --bg: var(--c-cream);
+  --fg: #14120f;
+  --mut: #5d574c;
+  --line: rgba(20, 18, 15, 0.16);
+  --acc: var(--c-coral-deep);
+  --card: var(--c-cream-2);
+  --card-fg: #14120f;
+  --chip-bg: rgba(20, 18, 15, 0.08);
+  --chip-fg: #14120f;
+  --focus: var(--c-coral-deep);
+  --ok: #1f7a3d;
+  --bad: #b3261e;
+  --warn: #8a5a00;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--c-ink);
+    --fg: var(--c-cream);
+    --mut: #a8a296;
+    --line: rgba(244, 239, 230, 0.16);
+    --acc: var(--c-coral-lit);
+    --card: var(--c-ink-2);
+    --card-fg: var(--c-cream);
+    --chip-bg: rgba(244, 239, 230, 0.1);
+    --chip-fg: var(--c-cream);
+    --focus: var(--c-coral-lit);
+    --ok: #5fd08a;
+    --bad: #ff8a80;
+    --warn: #f0c060;
+    color-scheme: dark;
+  }
+}
