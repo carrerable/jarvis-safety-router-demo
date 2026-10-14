@@ -88,6 +88,8 @@ pre { background: var(--chip-bg); padding: var(--s-3); border-radius: var(--r-s)
 .orb-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 600ms var(--ease); }
 .orb-hero[data-ready="true"] .orb-canvas { opacity: 1; }
 .orb-hero[data-ready="true"] .orb-fallback { opacity: 0; }
+.orb-hero[data-lost="true"] .orb-canvas { opacity: 0; }
+.orb-hero[data-lost="true"] .orb-fallback { opacity: 1; }
 .orb-fallback { --orb: #e8572a; position: absolute; left: 50%; top: 50%; width: min(52%, 15rem); aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle at 50% 50%, #f4efe6 0 8%, var(--orb) 38%, rgba(232, 87, 42, 0.18) 66%, transparent 72%); box-shadow: 0 0 4rem 1rem color-mix(in srgb, var(--orb) 35%, transparent); transition: opacity 600ms var(--ease), box-shadow 300ms; animation: orb-breathe 4s ease-in-out infinite; }
 .orb-hero[data-state="thinking"] .orb-fallback { --orb: #3d6bff; }
 .orb-hero[data-state="blocked"] .orb-fallback { --orb: #ff3b30; }

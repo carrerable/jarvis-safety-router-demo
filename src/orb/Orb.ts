@@ -221,9 +221,16 @@ export function createOrb(canvas: HTMLCanvasElement): Orb {
   const onVis = () => sync();
   document.addEventListener('visibilitychange', onVis);
   reduced.addEventListener('change', sync);
+  // If the GPU drops the context (common on integrated GPUs), show the CSS orb until it comes back.
+  const onLost = (e: Event) => { e.preventDefault(); cancelAnimationFrame(raf); raf = 0; host.dataset.lost = 'true'; };
+  const onRestored = () => { delete host.dataset.lost; renderStatic(); sync(); };
+  canvas.addEventListener('webglcontextlost', onLost);
+  canvas.addEventListener('webglcontextrestored', onRestored);
   resize();
-  // Start from the idle look immediately (no easing from zero).
+  // Start from the idle look immediately (no easing from zero) and draw one frame right away, so the
+  // canvas is never blank even if the orb starts off-screen and the loop pauses before its first tick.
   apply(0, true);
+  renderer.render(scene, camera);
   sync();
 
   return {
@@ -234,6 +241,7 @@ export function createOrb(canvas: HTMLCanvasElement): Orb {
     },
     dispose() {
       cancelAnimationFrame(raf); ro.disconnect(); io.disconnect();
+      canvas.removeEventListener('webglcontextlost', onLost); canvas.removeEventListener('webglcontextrestored', onRestored);
       document.removeEventListener('visibilitychange', onVis);
       reduced.removeEventListener('change', sync);
       geo.dispose(); mat.dispose(); halo.geometry.dispose(); (halo.material as ShaderMaterial).dispose();
